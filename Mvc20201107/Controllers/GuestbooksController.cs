@@ -15,14 +15,29 @@ namespace Mvc20201107.Controllers
 
 
 
+        public ActionResult Index()
+        {
+
+            return View();
+
+        }
+
+
+
         // GET: Guestbooks
-        public ActionResult Index(string Search,int Page=1)
+        public ActionResult GetDataList(string Search,int Page=1)
         {
             GuestbooksViewModel Data = new GuestbooksViewModel();
             Data.Search = Search;
             Data.Paging = new ForPaging(Page);
             Data.DataList = GuestbooksService.GetDataList(Data.Paging, Data.Search);
-            return View(Data);
+            //return View(Data);
+            return PartialView(Data);
+        }
+        [HttpPost]
+        public ActionResult GetDataList([Bind(Include ="Search")] GuestbooksViewModel Data)
+        {
+            return RedirectToAction("GetDataList",new { Search = Data.Search});
         }
 
 

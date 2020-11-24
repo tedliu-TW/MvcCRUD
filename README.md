@@ -1,15 +1,10 @@
 # MvcCRUD
 留言板
 
-Service:GuestbooksDBService.cs 獨立這支程式負責在跟資料庫做 CRUD
-Controller:GuestbooksController.cs 
-Model:Guesbooks.cs 
+# 架構
 
-ViewModle
-View
-
-
-
-
-全稱增加（Create，意為「建立」）、刪除（Delete）、查詢（Read，意為「讀取」）、改正（Update，意為「更新」）
-
+# Model     MvcCRUD/Mvc20201107/Models/Guesbooks.cs 
+# Control   MvcCRUD/Mvc20201107/Controllers/GuestbooksController.cs 
+# Service   MvcCRUD/Mvc20201107/Services/GuestbooksDBService.cs + MvcCRUD/Mvc20201107/Services/ForPaging.cs 
+# ViewModel MvcCRUD/Mvc20201107/ViewModels/GuestbooksViewModel.cs 
+# View      MvcCRUD/Mvc20201107/Views/Guestbooks/
